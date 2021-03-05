@@ -986,7 +986,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -40.5, -11, -1 }
+#define NOZZLE_TO_PROBE_OFFSET { -43, -13, -1.75 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1035,8 +1035,8 @@
 #define Z_PROBE_LOW_POINT          -2 // Farthest distance below the trigger-point to go before stopping
 
 // For M851 give a range for adjusting the Z probe offset
-#define Z_PROBE_OFFSET_RANGE_MIN -20
-#define Z_PROBE_OFFSET_RANGE_MAX 20
+#define Z_PROBE_OFFSET_RANGE_MIN -2
+#define Z_PROBE_OFFSET_RANGE_MAX 0
 
 // Enable the M48 repeatability test to test probe accuracy
 //#define Z_MIN_PROBE_REPEATABILITY_TEST
@@ -1233,8 +1233,8 @@
  *   With an LCD controller the process is guided step-by-step.
  */
 //#define AUTO_BED_LEVELING_3POINT
-//define AUTO_BED_LEVELING_LINEAR
-#define AUTO_BED_LEVELING_BILINEAR
+define AUTO_BED_LEVELING_LINEAR
+//#define AUTO_BED_LEVELING_BILINEAR
 //#define AUTO_BED_LEVELING_UBL
 //#define MESH_BED_LEVELING
 
@@ -1281,7 +1281,7 @@
 #if EITHER(AUTO_BED_LEVELING_LINEAR, AUTO_BED_LEVELING_BILINEAR)
 
   // Set the number of grid points per dimension.
-  #define GRID_MAX_POINTS_X 3
+  #define GRID_MAX_POINTS_X 2
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   // Probe along the Y axis, advancing X after each column
